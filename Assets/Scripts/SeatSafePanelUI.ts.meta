@@ -1,0 +1,50 @@
+- !<AssetImportMetadata/7dc5017c-8e53-4058-8c12-ab5256ecdba1>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 8d23520c-97d7-46f6-a462-f9f7d3aa2bfa
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 8d23520c-97d7-46f6-a462-f9f7d3aa2bfa
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 61654599-d705-4747-9e5e-a8f26c776021
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/61654599-d705-4747-9e5e-a8f26c776021>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  RunInEditor: false
+  ComponentUid: c5882d0c-25cc-4eb9-bc3d-bbc5fe88e637
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    cardAnchor: false
+    controlAnchor: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - cardAnchor: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      controlAnchor: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input SceneObject cardAnchor
+    - // @input SceneObject controlAnchor
