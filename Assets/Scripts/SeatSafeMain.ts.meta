@@ -25,11 +25,17 @@
   VersionPrerelease: ""
   UpdateOrder: 0
   RunInEditor: false
-  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ComponentUid: b415e1b8-4eb8-4f3c-984a-3e432e2abdb4
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
-    {}
+    cameraObj: false
+    chairAnchor: false
+    chairVisual: false
+    debugColliders: false
+    enableAudio: false
+    painFreeApiUrl: false
+    panelUI: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -39,10 +45,21 @@
   Attachments:
     []
   DefaultScriptInputs:
-    -
-      {}
+    - debugColliders: false
+      enableAudio: false
+      cameraObj: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      chairAnchor: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      chairVisual: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      panelUI: !<MappingBased.AssignableType_2> 00000000-0000-0000-0000-000000000000
+      painFreeApiUrl: "http://127.0.0.1:8091/api/condition"
   ScriptTypes:
     -
       {}
   InputLines:
-    []
+    - // @input bool debugColliders
+    - // @input bool enableAudio
+    - // @input SceneObject cameraObj
+    - // @input SceneObject chairAnchor
+    - // @input AssignableType_1 chairVisual
+    - // @input AssignableType_2 panelUI
+    - '// @input string painFreeApiUrl = "http://127.0.0.1:8091/api/condition"'

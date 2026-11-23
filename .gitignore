@@ -33,7 +33,14 @@ leaf_plugin_settings.json
 # Local agent skills & plugins
 .agents/
 .claude/
+.clad/
 agent/
 Plugins/
 skills-lock.json
+AGENTS.md
+CLAUDE.md
+
+# Local demo outputs and working scratch
+_reports/
+_work/
 

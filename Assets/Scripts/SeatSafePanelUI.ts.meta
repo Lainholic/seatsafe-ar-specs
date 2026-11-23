@@ -31,6 +31,8 @@
   ScriptInputsHidden:
     cardAnchor: false
     controlAnchor: false
+    hudAnchor: false
+    logAnchor: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -42,9 +44,13 @@
   DefaultScriptInputs:
     - cardAnchor: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       controlAnchor: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      logAnchor: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      hudAnchor: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
     - // @input SceneObject cardAnchor
     - // @input SceneObject controlAnchor
+    - // @input SceneObject logAnchor
+    - // @input SceneObject hudAnchor

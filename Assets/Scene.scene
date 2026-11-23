@@ -5,6 +5,16 @@
     - !<own> 00000000-0000-0065-0000-000000000064
     - !<own> 0005641c-028d-459a-0000-000000014b4d
     - !<own> f5d74682-203a-4970-81ea-9fa7b88c96bb
+    - !<own> 6643fd09-102b-4ecb-94c0-58439802c8a0
+    - !<own> ca723786-49fa-4b77-a739-ca94d9bc729b
+    - !<own> 5a0b8970-06b6-4d63-9246-e895ccde0b4b
+    - !<own> cd2766d6-98c9-474a-a3e6-7a4366d5a0eb
+    - !<own> de08b41e-0fb3-478e-bd72-0def01bee4f7
+    - !<own> 6026f25b-26fa-41c4-832c-38ead37d6719
+    - !<own> 18cd93d7-9d0b-41d5-9055-1990d18c27f6
+    - !<own> 13ab59e2-bf1f-4a2e-90cb-55d8cf5f3199
+    - !<own> 2355fe99-ba8d-451d-81f4-e8013938ff1a
+    - !<own> e85fd2d1-c531-4b3d-b74b-5ee7bf05b709
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       - id: 1
@@ -192,6 +202,22 @@
     - !<own> 276368e3-f687-4cc6-947d-24de3a78c9af
   Components:
     []
+- !<ScriptComponent/039c77a8-76d3-4480-8b18-d21f1969d1db>
+  PrefabRemaps:
+    []
+  Name: SeatSafeChairVisual
+  Enabled: true
+  ScriptAsset: !<reference> 9b73223c-8d95-4119-876c-6cbc4640765e
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      baseMaterial: !<reference.Material> 899cce01-33d1-42d4-a465-08345a6578b1
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/0451d993-a1f7-464e-9b69-32c0d9af8ed7>
   PrefabRemaps:
     []
@@ -301,6 +327,25 @@
     - !<own> 05147ea1-cb6b-4629-9484-199a4aa4d92a
   Components:
     []
+- !<ScriptComponent/0ba3b520-cf9e-44cb-8c59-f5ca324f374c>
+  PrefabRemaps:
+    []
+  Name: SeatSafePanelUI
+  Enabled: true
+  ScriptAsset: !<reference> 8d23520c-97d7-46f6-a462-f9f7d3aa2bfa
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      cardAnchor: !<reference.SceneObject> ca723786-49fa-4b77-a739-ca94d9bc729b
+      controlAnchor: !<reference.SceneObject> 5a0b8970-06b6-4d63-9246-e895ccde0b4b
+      logAnchor: !<reference.SceneObject> 13ab59e2-bf1f-4a2e-90cb-55d8cf5f3199
+      hudAnchor: !<reference.SceneObject> 2355fe99-ba8d-451d-81f4-e8013938ff1a
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/0c355300-e635-47c1-a8c3-5ddef30b8824>
   PrefabRemaps:
     []
@@ -433,6 +478,21 @@
     - !<own> a6af4948-9adc-4052-ae22-db902dd2764e
   Components:
     []
+- !<SceneObject/13ab59e2-bf1f-4a2e-90cb-55d8cf5f3199>
+  PrefabRemaps:
+    []
+  Name: PainLogAnchor
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -46.000000, y: -4.000000, z: -138.000000}
+    Rotation: {x: 0.000000, y: 22.000000, z: 0.000000}
+    Scale: {x: 0.580000, y: 0.580000, z: 0.580000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    []
 - !<SceneObject/181c239f-175e-4912-94fc-d37a2599b2d6>
   PrefabRemaps:
     []
@@ -448,6 +508,21 @@
     []
   Components:
     []
+- !<SceneObject/18cd93d7-9d0b-41d5-9055-1990d18c27f6>
+  PrefabRemaps:
+    []
+  Name: LEAF Plugin Bridge
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 71a60b18-9a60-4cc4-b59e-f3c20b04c143
 - !<RenderMeshVisual/1f969daa-5809-4500-b314-98d91ccba131>
   PrefabRemaps:
     []
@@ -483,6 +558,22 @@
     []
   Components:
     - !<own> e1031f7e-3474-489f-a529-282f7192f812
+- !<ScriptComponent/2219e8bf-2356-49d7-9e39-c29102c4d8bf>
+  PrefabRemaps:
+    []
+  Name: LeafIndex
+  Enabled: true
+  ScriptAsset: !<reference> 0322bf93-d3e1-41cd-a746-b4bee6beff3d
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/23018601-1041-4785-a20e-9ad5ab722f95>
   PrefabRemaps:
     []
@@ -496,6 +587,21 @@
     HasSegmentScaleCompensation: false
   Children:
     - !<own> 83ef588c-5040-4344-b15f-0554c739da0b
+  Components:
+    []
+- !<SceneObject/2355fe99-ba8d-451d-81f4-e8013938ff1a>
+  PrefabRemaps:
+    []
+  Name: MotionHudAnchor
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 33.000000, z: -140.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 0.600000, y: 0.600000, z: 0.600000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
   Components:
     []
 - !<SceneObject/23861703-e5d4-4885-be1b-c3358c1877a4>
@@ -645,6 +751,22 @@
     - !<own> a7da4af4-3d84-4acd-a31e-920a56b4c5c8
   Components:
     []
+- !<ScriptComponent/33096727-abd3-403b-9e43-020428f5e53d>
+  PrefabRemaps:
+    []
+  Name: AgentInspectScript
+  Enabled: true
+  ScriptAsset: !<reference> 0b25079c-f5bf-4c6d-96c4-f43b89dfa213
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<RenderMeshVisual/335c5f8b-2917-49e8-8af5-220696e9bc09>
   PrefabRemaps:
     []
@@ -926,6 +1048,21 @@
     - !<own> bf2095b6-c6f8-48c8-b840-e0a6cec0dc99
   Components:
     []
+- !<SceneObject/5a0b8970-06b6-4d63-9246-e895ccde0b4b>
+  PrefabRemaps:
+    []
+  Name: ControlPanelAnchor
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 46.000000, y: -4.000000, z: -138.000000}
+    Rotation: {x: 0.000000, y: -22.000000, z: 0.000000}
+    Scale: {x: 0.580000, y: 0.580000, z: 0.580000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    []
 - !<ScriptComponent/5f153ad7-2baa-4fd9-a298-0dcfad86da3b>
   PrefabRemaps:
     []
@@ -950,6 +1087,21 @@
   ScriptTypes:
     "":
       {}
+- !<SceneObject/6026f25b-26fa-41c4-832c-38ead37d6719>
+  PrefabRemaps:
+    []
+  Name: LeafIndex
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 2219e8bf-2356-49d7-9e39-c29102c4d8bf
 - !<ScriptComponent/62967490-d66e-4479-8829-e5c9da5b5b57>
   PrefabRemaps:
     []
@@ -1011,6 +1163,21 @@
     - !<own> 80574bd1-697b-4bb5-b9ce-13b340146d82
   Components:
     - !<own> ccf4d3bc-d3c2-4580-b9c5-62f164ef7eef
+- !<SceneObject/6643fd09-102b-4ecb-94c0-58439802c8a0>
+  PrefabRemaps:
+    []
+  Name: SeatSafeChair
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: -76.000000, z: -148.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 039c77a8-76d3-4480-8b18-d21f1969d1db
 - !<SceneObject/6a7a67db-5675-49bb-8f31-ba0588e3cffc>
   PrefabRemaps:
     []
@@ -1101,6 +1268,22 @@
     - !<own> 6dbaab8f-d98a-4f36-b836-1d7c8a0cca87
   Components:
     []
+- !<ScriptComponent/71a60b18-9a60-4cc4-b59e-f3c20b04c143>
+  PrefabRemaps:
+    []
+  Name: MessagingBridge
+  Enabled: true
+  ScriptAsset: !<reference> 9aa407db-2872-4afc-a162-cf7faf2a0f29
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/71e47ae8-e7da-438c-be22-b495f0fbd4fe>
   PrefabRemaps:
     []
@@ -1315,6 +1498,22 @@
     - !<own> 08e3cc22-f2e1-49fb-9ddc-145fe6547ce3
   Components:
     []
+- !<ScriptComponent/84459dbc-2d30-4c66-b9af-753f108b19bc>
+  PrefabRemaps:
+    []
+  Name: AgentInteractScript
+  Enabled: true
+  ScriptAsset: !<reference> 29091811-e792-46be-bfa4-28ddec5f11be
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/859e1ef3-3021-4825-8626-f1dc323b9252>
   PrefabRemaps:
     []
@@ -1723,6 +1922,30 @@
     - !<own> fcc185fc-4e88-4e9e-9c71-40bd83b1b0ed
   Components:
     []
+- !<ScriptComponent/b5845674-b8a9-4a58-a318-c9b2fbb1bbe9>
+  PrefabRemaps:
+    []
+  Name: SeatSafeMain
+  Enabled: true
+  ScriptAsset: !<reference> 664878bd-3be0-413d-bb2b-807fa9a84945
+  ScriptInputsDefault:
+    debugColliders: true
+    enableAudio: true
+    painFreeApiUrl: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      debugColliders: false
+      enableAudio: false
+      cameraObj: !<reference.SceneObject> 00000000-0000-0065-0000-000000000064
+      chairAnchor: !<reference.SceneObject> 6643fd09-102b-4ecb-94c0-58439802c8a0
+      chairVisual: !<MappingBased.AssignableType_1> 039c77a8-76d3-4480-8b18-d21f1969d1db
+      panelUI: !<MappingBased.AssignableType_2> 0ba3b520-cf9e-44cb-8c59-f5ca324f374c
+      painFreeApiUrl: "http://127.0.0.1:8091/api/condition"
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/b786dabc-29e4-4cfa-8a84-f39604ffcbdd>
   PrefabRemaps:
     []
@@ -1886,6 +2109,21 @@
     - !<own> 0a0e1d78-8246-4f5b-ab1a-fdc51837956d
   Components:
     []
+- !<SceneObject/ca723786-49fa-4b77-a739-ca94d9bc729b>
+  PrefabRemaps:
+    []
+  Name: ChairCardAnchor
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 14.000000, z: -142.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 0.620000, y: 0.620000, z: 0.620000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    []
 - !<Skin/ccf4d3bc-d3c2-4580-b9c5-62f164ef7eef>
   PrefabRemaps:
     []
@@ -1941,6 +2179,21 @@
     index-2: !<reference> 2dae2a27-8ce6-466a-8bff-622195c1b3a8
     thumb-3_end_end_end_end: !<reference> bf2095b6-c6f8-48c8-b840-e0a6cec0dc99
     wrist_to_pinky: !<reference> 3b4f5057-b516-4d3b-9c8d-14c81af2f505
+- !<SceneObject/cd2766d6-98c9-474a-a3e6-7a4366d5a0eb>
+  PrefabRemaps:
+    []
+  Name: SeatSafeUIRoot
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 0ba3b520-cf9e-44cb-8c59-f5ca324f374c
 - !<SceneObject/ce2213a1-7aa1-4201-a3c7-c2aaa06fd4ff>
   PrefabRemaps:
     []
@@ -2126,6 +2379,21 @@
     - !<own> d4a9c5e3-fe96-4824-9b20-59f5ad39eabd
   Components:
     []
+- !<SceneObject/de08b41e-0fb3-478e-bd72-0def01bee4f7>
+  PrefabRemaps:
+    []
+  Name: SeatSafeController
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> b5845674-b8a9-4a58-a318-c9b2fbb1bbe9
 - !<RenderMeshVisual/e1031f7e-3474-489f-a529-282f7192f812>
   PrefabRemaps:
     []
@@ -2216,6 +2484,22 @@
     - !<own> 0f983d21-20bc-4d89-a991-fbb95bacbd64
   Components:
     []
+- !<SceneObject/e85fd2d1-c531-4b3d-b74b-5ee7bf05b709>
+  PrefabRemaps:
+    []
+  Name: AiPreviewAgent Handler
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 33096727-abd3-403b-9e43-020428f5e53d
+    - !<own> 84459dbc-2d30-4c66-b9af-753f108b19bc
 - !<SceneObject/e9454e66-5d09-4a8a-bcd7-dea762326a48>
   PrefabRemaps:
     []

@@ -22,8 +22,10 @@ When a patient with knee or lower-back pain approaches a chair to sit down, the 
 - Where the user is looking during the main task: Standing 0.8 to 1.2 m in front of the chair, looking slightly down toward the seat.
 - Virtual test chair: Anchored on the floor (`y = 0`), approx. 50 x 50 cm footprint, seat height switchable (30 / 38 / 46 cm) (default).
 - Seat safety ring & height bar: Floating 5 cm above the chair seat (`~55 x 55 cm`), glowing green (safe), yellow (caution), or red (high pain risk) (default).
-- Pain prediction card: Floating 35 cm above the seat (within comfortable ~1 m view, bright high-contrast text on translucent panel—no pure black), showing seat height, deficit in cm, an overall risk evaluation score/grade (Safe / Caution / High Risk) calculated from chair height + pain area + medication status + morning condition, and expected post-sit joint load (e.g., "Seat 30 cm · 15 cm too low · High Risk (8/10) · No meds + Poor morning condition: high knee/back strain") (default).
+- Pain prediction card: Floating clearly above the chair backrest (within comfortable ~1.2 m eye-level view, bright high-contrast text on translucent panel—no pure black), showing seat height or step rise, deficit in cm, an overall risk evaluation score/grade (Safe / Caution / High Risk) calculated from geometry + pain area + medication status + morning condition + per-user personal calibration, and expected joint load advice (default).
 - Control panel (Daily check-in & Height selector): Placed to the right side of the chair at waist/chest height (~95 cm above floor, within arm's reach ~65 cm away) with large pinch buttons for chair height test, pain area, medication status, and morning condition (default).
+- Pain log & personalization panel: Placed to the left side of the chair symmetrically to the control panel, allowing one-tap situation tagging (Home / Cafe / Clinic) and post-sit pain logging (No Pain / Mild / Sharp) that adapts each user's personal safe seat height threshold and displays recent logs locally (with PainFree API POST fallback).
+- StepSafe & Motion Guards (BendSafe / StandSafe / PaceSafe): Users can switch the center spatial target between Chair (SeatSafe) and 3-step Stairs with handrail guide (StepSafe, 14 / 18 / 22 cm rise). Meanwhile, real-time camera tracking drives an unobtrusive top floating MotionGuardHUD banner that stays hidden until triggered by deep forward bending (BendSafe), rapid standing rise (StandSafe 3s pause countdown), or prolonged stillness (PaceSafe stretch & meds reminder), plus a one-tap Guard preview toggle for demo verification.
 
 ## Hands and input
 - Chair height test buttons (Low 30 cm / Mid 38 cm / Safe 46 cm): Large pinch buttons on the side control panel to simulate different real-world chairs (default).
@@ -32,23 +34,25 @@ When a patient with knee or lower-back pain approaches a chair to sit down, the 
 - Sync from PainFree App button ("Sync App"): Attempts a live `fetch` from the PainFree app endpoint (with clean fallback to sample PainFree score data) and displays the synced morning condition score & medication status (default).
 - Morning condition selector (Good 90 / Fair 65 / Poor 35): Three large pinch buttons to override or simulate the morning condition score from the PainFree app, dynamically adjusting the overall risk grade and safe threshold margin (default).
 - Dismiss / Acknowledge button ("Got it"): Large pinch button to hide the warning once the user has seen it (default).
+- Situation & Post-sit pain log buttons (Home / Cafe / Clinic + No Pain / Mild / Sharp): Large pinch buttons on the left panel to record real post-sit pain and automatically calibrate the user's personal safe height offset (e.g., Sharp pain raises safe threshold by +2 cm), persisted locally on device and synced to PainFree API when available.
 - Targets are big (at least 10 x 6 cm) and highlight when aimed at.
 - Voice (if any) and the button that does the same job: None required (all actions use large pinch buttons) (default).
 
 ## When things show
 - Seat safety ring & pain prediction card: Show automatically when the user walks within 2.0 m of the chair, and hide automatically when the user steps back beyond 2.5 m or pinches "Got it" (default).
-- If something needs attention out of view: A short soft alert chime plays once when entering within 1.5 m of a "High Risk" low chair (default).
+- If something needs attention out of view: An optional short soft alert chime plays once when entering within 1.5 m of a "High Risk" low chair when the user enables sound via the in-panel `Sound: Off / On` toggle button (starts muted by default) (default).
 
 ## Done criteria
 Each one can be checked in Lens Studio's preview.
 1. Walking within 2.0 m of the chair in Interactive Preview automatically reveals the seat safety ring and pain prediction card above the chair.
-2. Pinching the height buttons switches the virtual chair between Low (30 cm → red warning + chime + high strain text), Medium (38 cm → yellow caution), and Safe (46 cm → green safe indicator).
+2. Pinching the height buttons switches the virtual chair between Low (30 cm → red warning + optional chime + high strain text), Medium (38 cm → yellow caution), and Tall (46 cm → green safe indicator at baseline calibration, or yellow caution if personal calibration raises the safe threshold above 46 cm).
 3. Pinching the patient profile, medication status (Taken / Not Taken), and morning condition (Good / Fair / Poor) buttons dynamically updates the overall risk evaluation grade/score and expected post-sit pain explanation on the card above the chair.
 4. Stepping back beyond 2.5 m (or pinching "Got it") hides the overlay so it does not clutter the user's view.
+5. Pinching a situation tag (e.g., Cafe) and a post-sit pain level (No Pain / Mild / Sharp) records the entry on the Pain Log panel and dynamically adjusts the user's personalized safe height threshold.
 
 ## Out of scope
 - Real-time camera depth scanning or AI object recognition of physical chairs in a real room.
-- Persistent patient medical records or cloud sync across sessions.
+- Hospital EMR integration or remote multi-device cloud medical database hosting (local device persistence + optional local PainFree API sync are supported).
 - Multi-user shared sessions.
 
 ## Risks and open questions

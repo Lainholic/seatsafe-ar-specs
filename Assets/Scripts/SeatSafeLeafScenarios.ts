@@ -7,19 +7,36 @@ export class SeatSafeProximityScenario extends Scenario {
     async run(): Promise<void> {
         await sleep(800);
         const card = findSceneObjectByName("ChairWarningCard");
-        expect(card).toBeTruthy();
-        expect(card.enabled).toBe(true);
-
+        const chair = findSceneObjectByName("SeatSafeChair");
         const cam = findSceneObjectByName("Camera Object");
-        expect(cam).toBeTruthy();
+        if (!card) throw new Error("ChairWarningCard not found");
+        if (!chair) throw new Error("SeatSafeChair not found");
+        if (!cam) throw new Error("Camera Object not found");
+
+        const chairPos = chair.getTransform().getWorldPosition();
+        const devTracking = cam.getComponent("Component.DeviceTracking") as DeviceTracking | null;
         const origPos = cam.getTransform().getWorldPosition();
 
-        cam.getTransform().setWorldPosition(new vec3(0, 0, 150));
-        await sleep(350);
-        expect(card.enabled).toBe(false);
+        if (devTracking) {
+            devTracking.enabled = false;
+        }
+        try {
+            cam.getTransform().setWorldPosition(new vec3(chairPos.x, 0, chairPos.z + 120));
+            await sleep(350);
+            expect(card.enabled).toBe(true);
 
-        cam.getTransform().setWorldPosition(origPos);
-        await sleep(350);
-        expect(card.enabled).toBe(true);
+            cam.getTransform().setWorldPosition(new vec3(chairPos.x, 0, chairPos.z + 300));
+            await sleep(350);
+            expect(card.enabled).toBe(false);
+
+            cam.getTransform().setWorldPosition(new vec3(chairPos.x, 0, chairPos.z + 120));
+            await sleep(350);
+            expect(card.enabled).toBe(true);
+        } finally {
+            cam.getTransform().setWorldPosition(origPos);
+            if (devTracking) {
+                devTracking.enabled = true;
+            }
+        }
     }
 }

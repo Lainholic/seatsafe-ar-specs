@@ -18,9 +18,22 @@ export class SeatSafePatientContextScenario extends Scenario {
         }
 
         const ctxObj = findSceneObjectByName("ContextRow");
-        const ctxTxt = ctxObj.getComponent("Component.Text") as Text;
+        if (!ctxObj) throw new Error("ContextRow not found");
+        const ctxTxt = ctxObj.getComponent("Component.Text") as Text | null;
+        if (!ctxTxt) throw new Error("ContextRow Text not found");
         expect(ctxTxt.text.includes("Back Pain")).toBe(true);
         expect(ctxTxt.text.includes("Meds: Taken")).toBe(true);
         expect(ctxTxt.text.includes("90/100")).toBe(true);
+
+        const syncBtn = findInteractablesByName("Btn_Sync PainFree App", undefined, true)[0];
+        if (!syncBtn) throw new Error("Btn_Sync PainFree App not found");
+        await interactor.trigger(syncBtn);
+        await sleep(3000);
+
+        const syncObj = findSceneObjectByName("SyncStatus");
+        if (!syncObj) throw new Error("SyncStatus not found");
+        const syncTxt = syncObj.getComponent("Component.Text") as Text | null;
+        if (!syncTxt) throw new Error("SyncStatus Text not found");
+        expect(syncTxt.text.includes("PainFree")).toBe(true);
     }
 }
