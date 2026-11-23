@@ -44,7 +44,7 @@ export class SeatSafeMain extends BaseScriptComponent {
     panelUI!: SeatSafePanelUI;
 
     @input
-    painFreeApiUrl: string = "http://127.0.0.1:8091/api/condition";
+    painFreeApiUrl: string = "";
 
     private internetModule: InternetModule | null = null;
     private alertAudio: AudioComponent | null = null;

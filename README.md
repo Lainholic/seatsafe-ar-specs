@@ -2,6 +2,8 @@
 
 > **Learn AR with SPECS — Round 2 Submission**
 > Proactive, hands-free seat height, stair rise, and posture-risk guidance built for Snap SPECS AR glasses.
+>
+> **Demo Video (YouTube, 1080p 60fps):** https://youtu.be/Z70OyHdCLnc
 
 ## Overview
 
@@ -20,7 +22,7 @@ See the full design rationale and done criteria in [`devpost/design-brief.md`](d
   - **Seat Height Simulation**: `Low 30 cm`, `Mid 38 cm`, `Tall 46 cm`.
   - **Pain Area**: Knee Pain (`45 cm` safe baseline) vs. Lower-Back Pain (`43 cm` safe baseline).
   - **Medication Status**: `Meds: None` vs. `Meds: Taken` (reminds wearers not to overstrain joints even when medication masks pain).
-  - **Morning Condition & App Sync**: `Good 90` / `Fair 65` / `Poor 35` (+2 cm stiffness safety margin) plus live `Sync App` fetch to a configurable PainFree API endpoint with a 2.5 s timeout and clean offline sample fallback.
+  - **Morning Condition & App Sync**: `Good 90` / `Fair 65` / `Poor 35` (+2 cm stiffness safety margin) plus an opt-in `Sync App` endpoint (`painFreeApiUrl` defaults to offline `""` so no background network request fires unless explicitly configured; when blank or unreachable, falls back cleanly to built-in `PainFree Sample` data).
   - **In-Panel Audio Toggle**: `Sound: Off / On` (muted by default; when enabled, plays a soft chime once per approach within `1.5 m` of high-risk hazards).
 - **One-Tap Pain Log & Adaptive Personalization (`PAIN LOG & PERSONALIZE`)**:
   - Tag situation (`Home` / `Cafe` / `Clinic`) and log post-action pain (`No Pain -1 cm`, `Mild +1 cm`, `Sharp +2 cm`).

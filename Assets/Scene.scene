@@ -1942,7 +1942,7 @@
       chairAnchor: !<reference.SceneObject> 6643fd09-102b-4ecb-94c0-58439802c8a0
       chairVisual: !<MappingBased.AssignableType_1> 039c77a8-76d3-4480-8b18-d21f1969d1db
       panelUI: !<MappingBased.AssignableType_2> 0ba3b520-cf9e-44cb-8c59-f5ca324f374c
-      painFreeApiUrl: "http://127.0.0.1:8091/api/condition"
+      painFreeApiUrl: ""
   ScriptTypes:
     "":
       {}

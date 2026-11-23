@@ -28,7 +28,7 @@ When a patient with knee or lower-back pain approaches a chair to sit down, the 
 - StepSafe & Motion Guards (BendSafe / StandSafe / PaceSafe): Users can switch the center spatial target between Chair (SeatSafe) and 3-step Stairs with handrail guide (StepSafe, 14 / 18 / 22 cm rise). Meanwhile, real-time camera tracking drives an unobtrusive top floating MotionGuardHUD banner that stays hidden until triggered by deep forward bending (BendSafe), rapid standing rise (StandSafe 3s pause countdown), or prolonged stillness (PaceSafe stretch & meds reminder), plus a one-tap Guard preview toggle for demo verification.
 
 ## Hands and input
-- Chair height test buttons (Low 30 cm / Mid 38 cm / Safe 46 cm): Large pinch buttons on the side control panel to simulate different real-world chairs (default).
+- Chair height test buttons (Low 30 cm / Mid 38 cm / Tall 46 cm): Large pinch buttons on the side control panel to simulate different real-world chairs (default).
 - Patient profile toggle (Knee Pain / Lower-Back Pain): Large pinch button that adjusts the safe height threshold (45 cm for Knee, 43 cm for Back) and tailors the pain-warning text (default).
 - Medication status toggle (Meds Taken / Not Taken): Large pinch button indicating whether the patient has taken pain medication; adjusts the risk evaluation and adds a warning if unmedicated (higher immediate pain risk) or medicated (reminds not to overstrain joints even if pain feels dulled) (default).
 - Sync from PainFree App button ("Sync App"): Attempts a live `fetch` from the PainFree app endpoint (with clean fallback to sample PainFree score data) and displays the synced morning condition score & medication status (default).
@@ -45,7 +45,7 @@ When a patient with knee or lower-back pain approaches a chair to sit down, the 
 ## Done criteria
 Each one can be checked in Lens Studio's preview.
 1. Walking within 2.0 m of the chair in Interactive Preview automatically reveals the seat safety ring and pain prediction card above the chair.
-2. Pinching the height buttons switches the virtual chair between Low (30 cm → red warning + optional chime + high strain text), Medium (38 cm → yellow caution), and Tall (46 cm → green safe indicator at baseline calibration, or yellow caution if personal calibration raises the safe threshold above 46 cm).
+2. Pinching the height buttons switches the virtual chair between Low (30 cm → red warning + optional chime + high strain text), Medium (38 cm → yellow caution), and Tall (46 cm → green safe indicator at baseline Knee Fair/Good calibration, or yellow caution when Poor morning stiffness or positive personal calibration raises the safe threshold above 46 cm).
 3. Pinching the patient profile, medication status (Taken / Not Taken), and morning condition (Good / Fair / Poor) buttons dynamically updates the overall risk evaluation grade/score and expected post-sit pain explanation on the card above the chair.
 4. Stepping back beyond 2.5 m (or pinching "Got it") hides the overlay so it does not clutter the user's view.
 5. Pinching a situation tag (e.g., Cafe) and a post-sit pain level (No Pain / Mild / Sharp) records the entry on the Pain Log panel and dynamically adjusts the user's personalized safe height threshold.

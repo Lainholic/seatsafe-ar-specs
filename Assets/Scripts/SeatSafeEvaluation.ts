@@ -406,12 +406,13 @@ export async function fetchPainFreeAppCondition(
         source: "PainFree Sample"
     };
 
-    if (!internetModule || !apiUrl) {
+    const trimmedUrl = (apiUrl || "").trim();
+    if (!internetModule || !trimmedUrl) {
         return fallback;
     }
 
     try {
-        const req = new Request(apiUrl, { method: "GET" });
+        const req = new Request(trimmedUrl, { method: "GET" });
         const fetchAndReadText = async (): Promise<string | null> => {
             const resp = await internetModule.fetch(req);
             if (!resp || resp.status < 200 || resp.status >= 300) {
@@ -452,11 +453,12 @@ export async function postPainLogToPainFree(
     timeoutRace?: <T>(promise: Promise<T>, ms: number) => Promise<T>,
     timeoutMs: number = 2500
 ): Promise<boolean> {
-    if (!internetModule || !baseConditionUrl) {
+    const trimmedUrl = (baseConditionUrl || "").trim();
+    if (!internetModule || !trimmedUrl) {
         return false;
     }
     try {
-        const logUrl = buildPainLogUrl(baseConditionUrl);
+        const logUrl = buildPainLogUrl(trimmedUrl);
         const req = new Request(logUrl, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
